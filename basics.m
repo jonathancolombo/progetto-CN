@@ -27,9 +27,19 @@ A * 8;
 A * A';
 
 x = linspace(0,100,101);
-x.^2;
-A = ones(3);
-A = ones(3,1);
-B = zeros(2,8);
-X = eye(3);
+x.^2; %elevare tutti gli elementi alla seconda
+A = ones(3); % vettori di 1
+A = ones(3,1); %tutti a unooo
+B = zeros(2,8); % tutti a zeroo
+X = eye(3); %matrice identità
 x = 1:1:10;
+
+A = [5 3 4.2; 8 9 0];
+
+A(2,2);
+
+A(2,3) + A(2,2);
+
+A = linspace(220,900);
+B = 1:5:980;
+B(end);
