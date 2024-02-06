@@ -43,3 +43,18 @@ A(2,3) + A(2,2);
 A = linspace(220,900);
 B = 1:5:980;
 B(end);
+
+%Equations
+
+%Example problem 
+clc, clearvars, close all
+
+x = linspace(0,5); %genero 100 valori da 0 a 5
+y = (-(x-3).^2) + 10;
+
+%plot(x,y,'*'); grafica i punti (x,y)
+[MaxVal, I] = max(y); %restituisce il massimo valore e l'indice
+
+x_maxVal = x(I);
+
+%Plotting
