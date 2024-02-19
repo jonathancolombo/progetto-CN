@@ -23,6 +23,3 @@ if flag > 0
 else
     disp('La tolleranza non è stata soddisfatta entro il numero massimo di iterazioni.');
 end
-
-% Esegui il test della bisezione
-test_newton();

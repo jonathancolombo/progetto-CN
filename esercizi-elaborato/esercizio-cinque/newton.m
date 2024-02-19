@@ -10,6 +10,7 @@ function [x,flag] = newton( f, f1, x0, tolx, maxit )
 %la derivata si annulla, altrimenti ritorna il numero
 %di iterazioni richieste.
 %
+
 if nargin<4, error('numero argomenti insufficienti')
 elseif nargin==4, maxit = 100;
 end
