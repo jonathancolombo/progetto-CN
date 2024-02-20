@@ -1,4 +1,4 @@
-function [x,flag] = newton( f, f1, x0, tolx, maxit )
+function [x, it, count] = newton( f, f1, x0, tolx, maxit )
 %
 %[x,flag] = newton( f, f1, x0, tolx [, maxit] )
 %
@@ -11,19 +11,29 @@ function [x,flag] = newton( f, f1, x0, tolx, maxit )
 %di iterazioni richieste.
 %
 
-if nargin<4, error('numero argomenti insufficienti')
-elseif nargin==4, maxit = 100;
+if maxit <0
+    maxit=100;
 end
-if tolx<eps, error('tolleranza non idonea'), end
-x = x0;
-flag = -1;
-for i = 1:maxit
-    fx = feval( f, x );
-    f1x = feval( f1, x );
-    if f1x==0, break, end
-    x = x - fx/f1x;
-    if abs(x-x0)<=tolx*(1+abs(x0)), flag = i; break
-    else, x0 = x;
+if tolx<0
+    error('Tolleranza non idonea');
+end
+count=0;
+x = x0 ;
+for i =1: maxit
+    x0 = x ;
+    fx = feval (f , x0 );
+    f1x = feval ( f1 , x0 );
+    count=count+2;
+    if f1x==0 
+        break
+    end
+    x = x0 - fx / f1x ;
+    if abs (x - x0 ) <= tolx *(1+ abs ( x )) 
+        break
     end
 end
-return
+it = i ;
+if ( abs (x - x0 ) > tolx *(1+ abs ( x )))
+    disp (" il metodo non converge ") 
+end
+end

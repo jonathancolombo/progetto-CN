@@ -1,6 +1,6 @@
 %Esercizio 4 Scrivere una function Matlab che implementi in modo efficiente
 % il metodo di bisezione.
-function x = bisezione( a, b, f, tolx )
+function [x, it, count] = bisezione( a, b, f, tolx )
 %
 % x = bisezione( a, b, f, tolx ) Metodo di bisezione per calcolare
 % una radice di f(x), interna ad [a,b], con tolleranza tolx.
@@ -11,6 +11,7 @@ end
 if tolx<=0
     error('tolleranza non appropriata');
 end
+count = 0;
 fa = feval(f,a);
 fb = feval(f,b);
 if fa*fb>=0 
@@ -25,6 +26,7 @@ for i = 1:imax
     x = (a+b)/2;
     fx = feval( f, x );
     f1x = abs(fb-fa)/(b-a);
+    count=count+2;
     if abs(fx)<=tolx*f1x
         break
     elseif fa*fx<0
@@ -33,5 +35,6 @@ for i = 1:imax
         a = x; fa = fx;
     end
 end
+it =  i;
 return
 

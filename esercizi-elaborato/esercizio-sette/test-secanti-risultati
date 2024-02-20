@@ -1,0 +1,24 @@
+Metodo di secanti con con punto iniziale x0 = 1 e x1 = 0.9:
+
+test_secanti con tolleranza per tol = 10^−3
+La radice trovata è: 0.005576
+Numero di iterazioni richieste: 33
+Il numero di valutazioni funzionali è: 34
+
+test_secanti con tolleranza per tol = 10^−6
+La radice trovata è: -0.0010403
+Numero di iterazioni richieste: 61
+Il numero di valutazioni funzionali è: 62
+
+test_secanti con tolleranza per tol = 10^−9
+La radice trovata è: -0.001075
+Numero di iterazioni richieste: 89
+Il numero di valutazioni funzionali è: 90
+
+test_secanti con tolleranza per tol = 10^−12
+Il metodo non converge
+La radice trovata è: -0.0010751
+Numero di iterazioni richieste: 100
+Il numero di valutazioni funzionali è: 102
+
+

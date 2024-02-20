@@ -1,0 +1,22 @@
+Metodo di bisezione con intervallo di confidenza [−0.1, 1]:
+
+test_bisezione con tolleranza per tol = 10−3
+La radice trovata è: 0.0375
+Il numero di iterazioni è: 3
+Il numero di valutazioni funzionali è: 6
+
+test_bisezione per tol = 10−6
+La radice trovata è: 0.003125
+Il numero di iterazioni è: 5
+Il numero di valutazioni funzionali è: 10
+
+test_bisezione per tol = 10−9
+La radice trovata è: 0.0011163
+Il numero di iterazioni è: 31
+Il numero di valutazioni funzionali è: 62
+
+test_bisezione per tol = 10−12
+La radice trovata è: 0.0011163
+Il numero di iterazioni è: 32
+Il numero di valutazioni funzionali è: 64
+
