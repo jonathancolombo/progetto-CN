@@ -7,9 +7,9 @@ f1 = @(x) exp(x) + sin(x) + cos(x) - 2*x - 2;
 
 % Valore iniziale di x (x0)
 x0 = 1;
-
+e
 % Tolleranza tolx
-tolx = 1e-9;
+tolx = 1e-3;
 
 % Numero massimo di iterazioni (maxit)
 maxit = 500;
