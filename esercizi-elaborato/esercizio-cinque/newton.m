@@ -27,7 +27,8 @@ for i =1: maxit
     if f1x==0 
         break
     end
-    x = x0 - fx / f1x ;
+    x = x0 - (fx / f1x) ;
+    %x = x0 - m *(fx / f1x) ; per il newton modificato, m = 5
     if abs (x - x0 ) <= tolx *(1+ abs ( x )) 
         break
     end

@@ -1,0 +1,21 @@
+Metodo di newton modificato con m = 5 e con punto iniziale x0 = 1:
+
+test_newton con tolleranza per tol = 10^−3
+La radice trovata è: 2.6016e-05
+Numero di iterazioni richieste: 3
+Il numero di valutazioni funzionali è: 6
+
+test_newton con tolleranza per tol = 10^−6
+La radice trovata è: 2.6016e-05
+Numero di iterazioni richieste: 3
+Il numero di valutazioni funzionali è: 6
+
+test_newton con tolleranza per tol = 10^−9
+La radice trovata è: 2.6016e-05
+Numero di iterazioni richieste: 3
+Il numero di valutazioni funzionali è: 6
+
+test_newton con tolleranza per tol = 10^−12
+La radice trovata è: 2.6016e-05
+Numero di iterazioni richieste: 3
+Il numero di valutazioni funzionali è: 6
