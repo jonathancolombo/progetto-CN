@@ -18,6 +18,10 @@ for i = 1:n
     b(i) = n - i + ((10^(i) - 1 )/9);
 end
 
-disp(b);
-
+disp(b); % visualizza il vettore generato
+b = b.'; % vettore b trasposto
 % Richiamo della funzione mialu
+x = mialu(A,b);
+
+% Stampa del risultato
+disp(x);
