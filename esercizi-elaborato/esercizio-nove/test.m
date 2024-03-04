@@ -7,7 +7,7 @@ disp('vettore dei termini noti');
 disp(b);
 
 % Chiamata alla funzione mialdl per calcolare la soluzione del sistema lineare Ax = b
-x = mialdlt(A, b);
+x = mialdl(A, b);
 
 % Verifica della soluzione calcolata
 disp('Soluzione calcolata:');
