@@ -1,5 +1,4 @@
-function x = mialdlt(A,b)
-
+function x = mialdl(A,b)
 % mialdl(A,b) calcola la soluzione del sistema lineare Ax = b con il metodo
 % di fattorizzazione LDLt
 % Input:
