@@ -1,7 +1,7 @@
 %La funzione
 %f (x) = 1 + x2 + log(|3(1 − x) + 1|) / 80
 %x ∈ [1, 5/3],
-%ha un asintoto in x = 4/3, in cui tende a −∞. 
+%ha un asintoto in x = 4/3, in cui tende a −∞.
 %Graficarla in Matlab utilizzando%
 % x = linspace(1, 5/3, 100001)
 % (in modo che il floating di 4/3 sia contenuto in x) e vedere dove si ottiene il minimo. Commentare
@@ -21,7 +21,7 @@ title('Grafico della funzione f(x)');
 min_x = x(min_index);
 disp(['Il minimo della funzione si verifica in x = ', num2str(min_x), ' con valore f(x) = ', num2str(min_value)]);
 
-%calcoliamo il limite di questa funzione 
+%calcoliamo il limite di questa funzione
 % Calcolo dei limiti della funzione mentre x si avvicina a 4/3
 x_right = 4/3 + 0.001;  % x si avvicina a 4/3 da destra
 x_left = 4/3 - 0.001;   % x si avvicina a 4/3 da sinistra

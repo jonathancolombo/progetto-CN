@@ -1,36 +1,52 @@
 function [x, nit] = newton(fun, x0, tol, maxit)
-% Questo metodo risolve sistemi non lineari di equazioni 
-% attraverso l'uso del metodo di Newton.
-% Può restituire inoltre il numero di iterazioni eseguite.
-% Input: fun = vettore delle funzioni, jacobian = matrice jacobiana di fun, 
-% x0 = vettore delle approssimazioni iniziali,
-% tol = tolleranza specificata, maxit = quante iterazioni il metodo potrà fare al massimo, 
-% se non specificata maxit = 1000
-% Output: x = vettore delle soluzioni, nit = numero di iterazioni svolte
-if(nargin == 3)
-    tol = eps;
+%[x, nit]=newton(fun, x0, tol, maxit)
+%La funzione calcola la soluzione di un sistema di equazioni non lineare
+%F(x)=0, dove F è una funzione vettoriale R^m -> R^m, 0 è una m-upla di
+%zeri e x è il vettore soluzione m×1.
+%Input:
+%fun-funzione matlab che oltre a restituire il valore di F(x) deve anche
+%restituire F'(x), il valore della matrice Jacobiana, dato un m-upla x,
+%attraverso la sintassi [f, jacobian]=f(x).
+%x0-punto iniziale dell'iterazione per risolvere il sistema.
+%tol-tolleranza prefissata.
+%maxit-numero massimo di iterazioni consentite al metodo.
+%Output:
+%x-vettore soluzione m×1.
+%nit-numero di iterazioni eseguite
+%release 13-02-2024.
+if nargin<2||nargin>4
+    error("numero di argomenti errati");
 end
-if(nargin == 4)
-    maxit = 1000;
+if nargin==2
+    tol=1e-3;
+    maxit=1e3;
 end
-if (tol<0)
-    error('Errore: La tolleranza in input non può essere minore di 0.');
+if nargin==3
+    maxit=1e3;
 end
-if (maxit<=0)
-    error('Errore: Il massimo numero di iterazioni non può essere minore di 0.');
+if tol<=0||maxit<=0
+    error("argomenti errati");
 end
-x = x0;
-for nit=1:maxit
-    x0 = x;
-    [fx, jacobian] = feval(fun,x0);
-    dx = mialu(jacobian, -fx);
-    x = x + dx;
-    if (norm(x-x0)<=tol*(1+norm(x0)))
-        disp('Tolleranza desiderata raggiunta.');
-        break
+x0=x0(:);
+flag=0;
+nit=0;
+x=x0;
+for i=1:maxit
+    [Fx, dFx]=feval(fun,x);
+    [dx,isSing]=mialum(dFx,-Fx);
+    if isSing==1
+        warning("matrice Jacobiana singolare, metodo interrotto");
+        return
     end
+    if norm(dx./(1+abs(x)),inf)<=tol
+        flag=1;
+        break;
+    end
+    x=x+dx;
+    nit=nit+1;
 end
-if not(norm(x-x0)<=tol*(1+norm(x0)))
-    disp('Il metodo non è convergente.');
+if flag~=1
+    warning("livello di tolleranza non raggiunta");
 end
+return
 end

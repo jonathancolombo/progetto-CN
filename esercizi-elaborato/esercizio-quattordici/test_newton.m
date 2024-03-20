@@ -1,16 +1,18 @@
-% Definizione della funzione e della sua jacobiana
-fun = @(x) [x(1)^2 + x(2)^2 - 1; x(1)^2 - x(2)];
-jacobian = @(x) [2*x(1), 2*x(2); 2*x(1), -1];
+% Definizione della funzione
+funzione = @(x) [x(1)^2 + x(2)^2 - 1; x(1) - x(2)];
 
-% Approssimazioni iniziali e parametri
+% Approssimazione iniziale
 x0 = [0.5; 0.5];
-tol = 1e-6;
-maxit = 100;
 
-% Chiamata alla funzione di Newton
-[x, nit] = newton(fun, jacobian, x0, tol, maxit);
+% Tolleranza
+toleranza = 1e-6;
+
+% Numero massimo di iterazioni
+max_iterazioni = 100;
+
+% Chiamata alla funzione newton
+[x, iterazioni] = newton(funzione, x0, toleranza, max_iterazioni);
 
 % Visualizzazione dei risultati
-disp('Soluzione trovata:');
-disp(x);
-disp(['Numero di iterazioni: ', num2str(nit)]);
+fprintf('Soluzione trovata: x = [%f, %f]\n', x(1), x(2));
+fprintf('Numero di iterazioni: %d\n', iterazioni);
