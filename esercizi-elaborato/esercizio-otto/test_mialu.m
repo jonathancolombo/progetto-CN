@@ -1,6 +1,9 @@
-% Definizione della matrice dei coefficienti A e del vettore dei termini noti b
-A = [0,0,0; 1,2,3; 4,5,6;];
-b = randi([-20,20], 3, 1);
+% Definizione di una matrice dei coefficienti non singolare 3x3
+A = [1 2 3; 2 5 4; 6 7 8];
+
+% Definizione di un vettore dei termini noti b con tre elementi
+b = [10; 20; 30; 40];
+
 disp('Matrice dei coefficienti:');
 disp(A);
 disp('Vettore dei termini noti:');
@@ -21,7 +24,7 @@ disp('Soluzione esatta:');
 disp(x_esatto);
 
 % Verifica della correttezza della soluzione calcolata
-if isequal(x, x_esatto)
+if isequal(x, x_esatto) 
     disp('La soluzione calcolata è corretta.');
 else
     disp('La soluzione calcolata non è corretta.');

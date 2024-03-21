@@ -6,19 +6,19 @@ function x = mialu(A,b)
 % Output: x = soluzione del sistema lineare
 [m,n] = size(A);
 if m ~= n
-    error('Errore: matrice in input non quadrata');
+    error("Errore: La matrice in input non è quadrata");
 end
 if n~=length(b)
-    error(' Errore: la dimensione del vettore b non coincide con la dimensione della matrice A ');
+    error("Errore: la dimensione del vettore b non coincide con la dimensione della matrice A");
 end
 if size(b,2)>1
-    error(' Errore: il vettore b non ha la struttura di un vettore colonna ');
+    error("Errore: il vettore b non è un vettore colonna");
 end
 p = (1:n).';
 for i=1:n
     [mi,ki]=max(abs(A(i:n,i)));
     if mi==0
-        error(' Errore: matrice singolare! ');
+        error('Errore: La matrice non è non singolare.');
     end
     ki = ki+i-1;
     if ki>i

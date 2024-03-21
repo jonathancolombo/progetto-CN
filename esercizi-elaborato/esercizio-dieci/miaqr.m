@@ -1,7 +1,7 @@
 function [x,nr] = miaqr(A,b)
 
 % La funzione miaqr(A,b) calcola la fattorizzazione QR del sistema lineare
-% Ax = b sovradimensionato restituendo,oltre alla fattorizzazione,la norma 
+% Ax = b sovradimensionato restituendo,oltre alla fattorizzazione,la norma
 % euclidea del vettore residuo.
 % Input:
 % A = matrice da fattorizzare
@@ -12,16 +12,15 @@ function [x,nr] = miaqr(A,b)
 
 [m,n] = size(A);
 if(n>m)
-    error('Errore: il sistema in input non è sovradeterminato.');
+    error('Errore: sistema in input non sovradeterminato');
 end
 k = length(b);
 if k~=m
-    error('Errore: La dimensione della matrice e del vettore non coincidono.');
-end
+    error('Errore: La dimensione della matrice e del vettore non coincidono'); end
 for i = 1:n
     a = norm(A(i:m,i),2);
     if a==0
-        error('Errore: La matrice non ha rango massimo.');
+        error('Errore: La matrice non ha rango massimo');
     end
     if A(i,i)>=0
         a = -a;
