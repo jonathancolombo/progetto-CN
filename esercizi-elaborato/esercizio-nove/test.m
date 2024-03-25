@@ -1,8 +1,12 @@
-% Definizione della matrice simmetrica definita positiva A e del vettore dei termini noti b
-A = randi([-10,10], 5);
-b = randi([-10,10], 5, 1);
-disp('matrice A');
+A = [6, 2, 1; 2, 5, 2; 1, 2, 4];
+
+disp('Matrice A:');
 disp(A);
+% Lunghezza desiderata del vettore dei termini noti b
+lunghezza_b = 3;
+
+% Generazione del vettore dei termini noti b
+b = rand(lunghezza_b, 1);
 disp('vettore dei termini noti');
 disp(b);
 
