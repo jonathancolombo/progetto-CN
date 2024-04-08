@@ -6,16 +6,16 @@ function [x, it, count] = bisezione( a, b, f, tolx )
 % una radice di f(x), interna ad [a,b], con tolleranza tolx.
 %
 if a >= b
-    error('estremi intervallo errati');
+    error('Estremi intervallo errati');
 end
 if tolx<=0
-    error('tolleranza non appropriata');
+    error('Tolleranza non appropriata');
 end
 count = 0;
 fa = feval(f,a);
 fb = feval(f,b);
 if fa*fb>=0 
-    error('intervallo di confidenza non appropriato')
+    error('Intervallo di confidenza non appropriato')
 end
 imax = ceil( log2(b-a)-log2(tolx) );
 if imax<1

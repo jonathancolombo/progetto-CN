@@ -1,15 +1,13 @@
 function [x, it, count] = newton( f, f1, x0, tolx, maxit )
 %
-%[x,flag] = newton( f, f1, x0, tolx [, maxit] )
-%
+%[x, it, count] = newton( f, f1, x0, tolx, maxit)
 %Metodo di Newton per determinare una approssimazione
 %della radice di f(x)=0 con tolleranza (mista) tolx, a
 %partire da x0, entro maxit iterationi (default = 100).
-%f1 implementa f%(x) mentre in uscita flag vale -1, se
-%la tolleranza non è soddisfatta entro maxit iterate o
+%f1 implementa f%(x) mentre in uscita flag vale -1 se
+%tolleranza non soddisfatta entro maxit iterate o
 %la derivata si annulla, altrimenti ritorna il numero
 %di iterazioni richieste.
-%
 
 if maxit <0
     maxit=100;
@@ -17,6 +15,7 @@ end
 if tolx<0
     error('Tolleranza non idonea');
 end
+it = 0;
 count=0;
 x = x0 ;
 for i =1: maxit
@@ -24,17 +23,18 @@ for i =1: maxit
     fx = feval (f , x0 );
     f1x = feval ( f1 , x0 );
     count=count+2;
-    if f1x==0 
+    if f1x==0
         break
     end
     x = x0 - (fx / f1x) ;
-    %x = x0 - m *(fx / f1x) ; per il newton modificato, m = 5
-    if abs (x - x0 ) <= tolx *(1+ abs ( x )) 
+    %x = x0 - m *(fx / f1x) ; riga da scommentare per il metodo di newton modificato, 
+                            % dell'esercizio 7 con m = 5
+    if abs (x - x0 ) <= tolx *(1+ abs ( x ))
         break
     end
+    it = it + 1;
 end
-it = i ;
 if ( abs (x - x0 ) > tolx *(1+ abs ( x )))
-    disp (" il metodo non converge ") 
+    disp (' Il metodo non converge ')
 end
 end

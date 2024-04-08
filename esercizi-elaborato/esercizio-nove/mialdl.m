@@ -11,6 +11,13 @@ function x = mialdl(A,b)
 if m~=n
     error("Errore: La matrice deve essere quadrata");
 end
+if n~=length(b)
+    error(' Errore: la dimensione del vettore b non coincide con la dimensione della matrice A ');
+end
+% Verifica della simmetria
+if ~isequal(A, A')
+    error('Matrice A non simmetrica.');
+end
 if A(1,1)<=0
     error('Errore: La matrice deve essere sdp');
 end

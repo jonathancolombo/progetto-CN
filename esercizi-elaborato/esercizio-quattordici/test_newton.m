@@ -1,5 +1,8 @@
 % Definizione della funzione
 funzione = @(x) [x(1)^2 + x(2)^2 - 1; x(1) - x(2)];
+[parametro1, parametro2] = nomeFunzione(){
+    
+}
 
 % Approssimazione iniziale
 x0 = [0.5; 0.5];

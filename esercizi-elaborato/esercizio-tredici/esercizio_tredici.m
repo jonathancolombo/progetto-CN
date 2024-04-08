@@ -8,6 +8,7 @@ disp(A);
 disp('vettore dei termini noti');
 disp(b);
 
+
 % Chiamata alla funzione miaqr per calcolare la fattorizzazione QR del sistema sovradimensionato Ax = b
 [x, nr] = miaqr(A, b.');
 
