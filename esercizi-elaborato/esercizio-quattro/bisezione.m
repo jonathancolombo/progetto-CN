@@ -1,9 +1,7 @@
-%Esercizio 4 Scrivere una function Matlab che implementi in modo efficiente
-% il metodo di bisezione.
 function [x, it, count] = bisezione( a, b, f, tolx )
 %
-% x = bisezione( a, b, f, tolx ) Metodo di bisezione per calcolare
-% una radice di f(x), interna ad [a,b], con tolleranza tolx.
+% [x, it, count] = bisezione( a, b, f, tolx ) 
+% Metodo di bisezione per calcolare una radice di f(x), interna ad [a,b], con tolleranza tolx.
 %
 if a >= b
     error('Estremi intervallo errati');
