@@ -1,5 +1,5 @@
 function [x,nr] = miaqr(A,b)
-
+% [x,nr] = miaqr(A,b)
 % La funzione miaqr(A,b) calcola la fattorizzazione QR del sistema lineare
 % Ax = b sovradimensionato restituendo,oltre alla fattorizzazione,la norma
 % euclidea del vettore residuo.

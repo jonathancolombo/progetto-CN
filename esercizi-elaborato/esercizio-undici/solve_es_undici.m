@@ -1,4 +1,3 @@
-
 % Generazione del sistema lineare An
 n = 15; % dimensione della matrice
 A = ones(n); % inizializza una matrice di uno
@@ -25,3 +24,12 @@ x = mialu(A,b);
 
 % Stampa del risultato
 disp(x);
+
+% Calcolo del numero di condizionamento usando la norma 2
+condizionamento_2 = cond(A);  
+disp(['Numero di condizionamento (norma 2): ', num2str(condizionamento_2)]);
+
+% Calcolo del vettore errore
+e = b - A * x;
+disp('Vettore errore:');
+disp(e);

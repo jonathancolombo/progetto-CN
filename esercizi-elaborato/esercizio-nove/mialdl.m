@@ -1,6 +1,6 @@
 function x = mialdl(A,b)
-% mialdl(A,b) calcola la soluzione del sistema lineare Ax = b con il metodo
-% di fattorizzazione LDLt
+% x = mialdl(A,b)
+% Calcola la soluzione del sistema lineare Ax = b con il metodo di fattorizzazione LDLt
 % Input:
 % A = matrice simmetrica definita positiva da fattorizzare
 % b = vettore dei termini noti
