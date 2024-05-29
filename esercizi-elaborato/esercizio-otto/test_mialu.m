@@ -2,7 +2,7 @@
 A = [1 2 3; 2 5 4; 6 7 8];
 
 % Definizione di un vettore dei termini noti b con tre elementi
-b = [10; 20; 30; 40];
+b = [10; 20; 30];
 
 disp('Matrice dei coefficienti:');
 disp(A);

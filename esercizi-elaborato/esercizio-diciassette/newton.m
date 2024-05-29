@@ -1,5 +1,5 @@
 function YQ = newton(X,Y,XQ)
-% function YQ=newtonTer(X,Y,XQ)
+% function YQ = newton(X,Y,XQ)
 % Implementa in modo vettoriale la forma di Newton del polinomio interpolante una funzione.
 % Input:
 % X: Vettore colonna contenente le ascisse d'interpolazione che
@@ -10,7 +10,6 @@ function YQ = newton(X,Y,XQ)
 % Output: YQ: Valori approssimati della funzione con il polinomio interpolante in forma di Newton
 % Calcola i valori approssimati della funzione(di cui conosciamo i valori Y che assume nelle ascisse X)
 % calcolati attraverso il polinomio interpolante in forma di Newton nelle ascisse XQ.
-
 if(length(X)~=length(Y)), error('Numero di ascisse di interpolazione e di valori della funzione non uguale!'),
 end
 if (length(X) ~= length(unique(X))), error('Ascisse di interpolazione non distinte!'),
