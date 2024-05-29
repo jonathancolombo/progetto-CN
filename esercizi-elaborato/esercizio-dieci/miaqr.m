@@ -9,7 +9,6 @@ function [x,nr] = miaqr(A,b)
 % Output:
 % x = soluzione del sistema
 % nr = norma euclidea del vettore residuo
-
 [m,n] = size(A);
 if(n>m)
     error('Errore: sistema in input non sovradeterminato');

@@ -41,15 +41,18 @@ end
 return
 end
 
-% Definizione della funzione NewtonWeights
 function w = NewtonWeights(k)
     switch k
         case 1
             w = [1, 1] / 2;
         case 2
-            w = [1, 4, 1] / 3;
+            w = [1, 4, 1] / 6;
         case 3
             w = [1, 3, 3, 1] / 8;
+        case 4
+            w = [7, 32, 12, 32, 7] / 90;
+        case 5
+            w = [19, 75, 50, 50, 75, 19] / 288;
         case 6
             w = [41, 216, 27, 272, 27, 216, 41] / 840;
         otherwise
