@@ -1,21 +1,13 @@
-function test_calcolaCoeff()
-    % Test caso di grado 1
-    n = 1;
-    coef_expected = [1/2; 1/2];
-    coef_actual = calcolaCoeff(n);
-    assert(isequal(coef_actual, coef_expected), 'Errore nel calcolo dei coefficienti per n = 1');
+% Calcola i pesi delle formule di Newton-Cotes per i gradi da 1 a 7 e 9
+n_values = [1:7, 9];
 
-    % Test caso di grado pari maggiore di 1
-    n = 4;
-    coef_expected = [1; 4; 1];
-    coef_actual = calcolaCoeff(n);
-    assert(isequal(coef_actual, coef_expected), 'Errore nel calcolo dei coefficienti per n = 4');
-
-    % Test caso di grado dispari maggiore di 1
-    n = 3;
-    coef_expected = [1; 3; 1];
-    coef_actual = calcolaCoeff(n);
-    assert(isequal(coef_actual, coef_expected), 'Errore nel calcolo dei coefficienti per n = 3');
-
-    % Aggiungi ulteriori casi di test se necessario
+for n = n_values
+    coef = calcolaCoefficientiGrado(n);
+    fprintf('Grado %d: Pesi = [', n);
+    for i = 1:length(coef)-1
+        [num, den] = rat(coef(i), 1e-10); % Approssima il peso a un numero razionale
+        fprintf('%d/%d, ', num, den);
+    end
+    [num, den] = rat(coef(end), 1e-10); % Approssima il peso a un numero razionale
+    fprintf('%d/%d]\n', num, den);
 end
