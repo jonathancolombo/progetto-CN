@@ -1,10 +1,10 @@
 function [If , err] = composita (fun, a, b, k, n)
 % [If , err] = composita (fun, a, b, k, n)
-% Input: 
-%   fun: funzione integranda, a,b: estremi sinistro e destro dell'intervallo di integrazione 
-%   k: grado della formula di quadratura composita di Newton-Cotes 
+% Input:
+%   fun: funzione integranda, a,b: estremi sinistro e destro dell'intervallo di integrazione
+%   k: grado della formula di quadratura composita di Newton-Cotes
 %   n: numero di sottointervalli in cui suddividere l'intervallo di integrazione
-% Output: 
+% Output:
 %   If: approssimazione dell'integrale ottenuta, err: stima dell'errore di quadratura.
 if k<1
     error("Grado k errato");
@@ -49,7 +49,7 @@ function coef=calcolaCoefficientiGrado(n)
 %   della quadratura
 % Output
 %   coef: pesi della quadratura della formula di grado desiderato
-if(n<=0), error("Valore del grado della formula di Newton-Cotes non valido"),end
+if(n<=0), error('Valore del grado della formula di Newton-Cotes non valido'),end
 coef=zeros(n+1,1);
 if (mod(n,2) == 0)
     for i=0:n/2-1
