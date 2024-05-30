@@ -20,12 +20,14 @@ for j = 1:numel(nn)
     if type == 0 % Ascisse equidistanti
         x = linspace(a, b, nn(j)+1);
     else % Ascisse di Chebyshev
-        x = chebyshev(nn(j), a, b);
+        x = cheby(nn(j), a, b);
     end
     lin = lebesgue_function(x,xq);
     ll(j) = max(abs(lin));
 end
 end
+
+
 function lin = lebesgue_function(x,xq)
 n = length(x);
 if length(unique(x)) ~= n
@@ -41,4 +43,16 @@ for j = 1:n
     end
     lin = lin + abs(L);
 end
+end
+
+
+function x =cheby(n,a,b)
+% function x = cheby(n,a,b)
+% Input: n: grado del polinomio interpolante, a,b: estremi dell'intervallo di interpolazione
+% Output: x: ascisse di Chebyshev ricavate
+% Ricava le ascisse di Chebyshev nell'intervallo [a,b] per un polinomio interpolante di grado n
+if(n<0), error('Grado del polinomio interpolante non valido!'),end
+if(a>=b), error('Intervallo definito in maniera non corretta!'),end
+n=n+1;
+x(n:-1:1)=(a+b)/2+((b-a)/2)*cos(((2*(1:n)-1)*pi)/(2*n));
 end

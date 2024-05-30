@@ -7,3 +7,4 @@ if(n<0), error('Grado del polinomio interpolante non valido!'),end
 if(a>=b), error('Intervallo definito in maniera non corretta!'),end
 n=n+1;
 x(n:-1:1)=(a+b)/2+((b-a)/2)*cos(((2*(1:n)-1)*pi)/(2*n));
+return 
