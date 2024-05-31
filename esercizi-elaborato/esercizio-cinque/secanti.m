@@ -1,13 +1,16 @@
 function [x,it,count] = secanti(f,x0,x1,maxIt,tolx)
 % [x, it, count] = secanti(f,x0,x1,maxIt,tolx)
 % Calcola uno zero della funzione f usando il metodo delle secanti.
-% Input: f - funzione di cui voglio determinare la radice,
-% x0 - prima approssimazione iniziale della radice x1
-% - seconda approssimazione iniziale della radice,
-% maxIt - numero massimo d'iterazioni [DEFAULT 100],
-% tolx - tolleranza [DEFAULT 10^-3]
-% Output: x - approssimazione della radice,
-%it - numero di iterazioni eseguite,
+% Input:
+%   f - funzione di cui voglio determinare la radice,
+%   x0 - prima approssimazione iniziale della radice x1
+%   x1 - seconda approssimazione iniziale della radice,
+%   maxIt - numero massimo d'iterazioni [DEFAULT 100],
+%   tolx - tolleranza [DEFAULT 10^-3]
+%
+% Output:
+%   x - approssimazione della radice,
+%   it - numero di iterazioni eseguite,
 %count - numero di valutazioni funzionali eseguite
 
 if maxIt <0
