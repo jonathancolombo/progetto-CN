@@ -8,12 +8,18 @@ disp(A);
 disp('vettore dei termini noti');
 disp(b);
 
+b = [1; 2; 3; 4; 5];
 
-% Chiamata alla funzione miaqr per calcolare la fattorizzazione QR del sistema sovradimensionato Ax = b
-[x, nr] = miaqr(A, b.');
+% Definizione dei pesi omega
+omega = [0.5; 0.5; 0.75; 0.25; 0.25];
+omega = omega ./ 2.25; % normalizzo i pesi in modo che la loro somma sia 1.
 
-% Verifica della soluzione calcolata
-disp('Soluzione calcolata:');
+B = eye(5) .* sqrt(omega);
+A = B * A;
+b = B * b;
+
+[x, pw] = miaqr(A, b);
+
+disp('La soluzione x: ');
 disp(x);
-disp('Norma calcolata: ');
-disp(nr);
+fprintf('La norma pesata del residuo: %.10f\n', pw);
