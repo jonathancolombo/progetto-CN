@@ -1,51 +1,45 @@
-function [x, isSing]=mialum(A,b)
-%x=mialum(A,b)
-%mialum(A,b) calcola la soluzione al sistema lineare Ax=b, con A matrice
-%quadrata n×n non singolare e b vettore dei termini noti n×1. La
-%risoluzione del sistema passa prima per una fattorizzazione Lu con
-%pivoting parziale di A. È la versione modificata di mialu definita
-%appositamente per la funzione newton in modo che non venga fermato in caso
-%di matrice A singolare.
-%Input:
-%A-matrice dei coefficienti. Deve essere non singolare e quadrata.
-%b-colonna dei termini noti. Ha lo stesso numero di righe di A.
-%Output:
-%x-vettore soluzione n×1.
-%isSing-valore booleano messo a 1 se A è singolare.
-%release 14-02-2024.
-[m,n]=size(A);
-if m~=n||~iscolumn(b)||m~=length(b)
-    error("Argomenti non compatibili")
+function x = mialum(A, b)
+%   x = mialum(A, b);
+%
+%   Risolve il sistema lineare Ax = b con fattorizzazione LU senza
+%   pivoting parziale.
+%
+%   Input:
+%       A - matrice dei coefficienti;
+%       b - vettore dei termini noti.
+%
+%   Output:
+%       x - soluzione del sistema lineare Ax = b.
+
+% Controllo dimensioni matrice
+[m, n] = size(A);
+if m ~= n
+    error('La matrice in input non è quadrata');
 end
-isSing=0;
-tol=n*eps*norm(A,inf);
-%fattorizzazione LU con pivoting di A
-p=1:n;
-for j=1:n
-    [mj,kj]=max(abs(A(j:n,j)));
-    if mj<=tol
-        isSing=1;
-        x=0;
-        return;
-    end
-    kj=kj+j-1;
-    if kj>j
-        A([j kj],:)=A([kj j],:);
-        p([j kj])=p([kj j]);
-    end
-    A(j+1:n,j)=A(j+1:n,j)/A(j,j);
-    A(j+1:n,j+1:n)=A(j+1:n,j+1:n)-A(j+1:n,j)*A(j,j+1:n);
-end
-%risoluzione sistema PAx=Pb, in particolare Ly=Pb
-x=b(p);
-for j=1:n-1
-    x(j+1:n)=x(j+1:n)-x(j)*A(j+1:n,j);
-end
-%risoluzione sistema Ux=y
-for j=n:-1:1
-    x(j)=x(j)/A(j,j);
-    x(1:j-1)=x(1:j-1)-x(j)*A(1:j-1,j);
-end
-return
+if n ~= length(b)
+    error('Vettore b non compatibile con la matrice A');
 end
 
+% Fattorizzazione LU
+for i = 1:n-1
+    if A(i, i) == 0
+        error('Matrice singolare');
+    end
+    for j = i+1:n
+        A(j, i) = A(j, i) / A(i, i);
+        A(j, i+1:n) = A(j, i+1:n) - A(j, i) * A(i, i+1:n);
+    end
+end
+
+% Soluzione per L y = b
+x = b(:);
+for i = 2:n
+    x(i:n) = x(i:n) - A(i:n, i-1) * x(i-1);
+end
+
+% Soluzione per U x = y
+for i = n:-1:1
+    x(i) = x(i) / A(i, i);
+    x(1:i-1) = x(1:i-1) - A(1:i-1, i) * x(i);
+end
+end
