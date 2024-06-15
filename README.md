@@ -17,9 +17,9 @@ Ogni esercizio viene affrontato mediante l'implementazione di funzioni Matlab ch
 
 Il repository è organizzato nel seguente modo:
 
-- **/codice**: Contiene le funzioni Matlab sviluppate per risolvere gli esercizi proposti. Ogni esercizio ha la sua cartella dedicata con le funzioni associate.
-- **/relazione**: Contiene la relazione scritta che accompagna il progetto, dove vengono discussi i metodi utilizzati, i risultati ottenuti e le conclusioni. La relazione è scritta in formato LaTeX per una presentazione professionale.
-- **/risorse**: Eventuali risorse aggiuntive utilizzate durante lo sviluppo del progetto, come dataset di input o documentazione aggiuntiva.
+- **/esercizi-elaborato**: Contiene le funzioni Matlab sviluppate per risolvere gli esercizi proposti. Ogni esercizio ha la sua cartella dedicata con le funzioni associate.
+- **/relazione-elaborato**: Contiene la relazione scritta che accompagna il progetto, dove vengono discussi i metodi utilizzati, i risultati ottenuti e le conclusioni. La relazione è scritta in formato LaTeX per una presentazione professionale.
+- **/script-tutorial-matlab**: Script iniziale per imparare i comandi di Matlab.
 - **README.md**: Il file che stai leggendo attualmente, che fornisce una panoramica generale del progetto e delle istruzioni su come utilizzare il codice e la relazione.
 
 ## Come Utilizzare il Codice
@@ -51,4 +51,4 @@ Questo progetto è rilasciato sotto la [GPU General Public License 3.0]. Consult
 
 ---
 
-Questo README fornisce un'introduzione generale al progetto di Calcolo Numerico 2023-2024. Per ulteriori dettagli, consultare la relazione e il codice sorgente. Se avete domande o suggerimenti, non esitate a contattare gli autori. Grazie per il vostro interesse e contributo!
+Questo README fornisce un'introduzione generale al progetto di Calcolo Numerico 2023-2024. Per ulteriori dettagli, consultare la relazione e il codice sorgente. Se avete domande o suggerimenti, non esitate a contattare gli autori.
