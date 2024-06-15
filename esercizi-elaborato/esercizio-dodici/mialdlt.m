@@ -1,6 +1,5 @@
 function A = mialdlt(A)
-
-% mialdl(A,b) effettua la fattorizzazione della matrice A con il metodo
+% mialdl(A) effettua la fattorizzazione della matrice A con il metodo
 % di fattorizzazione LDLt
 % Input:
 % A = matrice simmetrica definita positiva da fattorizzare
