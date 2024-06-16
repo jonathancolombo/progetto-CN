@@ -1,6 +1,6 @@
 # Progetto di Calcolo Numerico 2023-2024
 
-Questo repository contiene il progetto di Calcolo Numerico per l'anno accademico 2023-2024. Il progetto si basa sulla risoluzione degli esercizi proposti nell'elaborato di Calcolo Numerico, versione 2023-06-04, insieme alla scrittura delle funzioni Matlab richieste.
+Questo repository contiene il progetto di Calcolo Numerico per l'anno accademico 2023-2024. Il progetto si basa sulla risoluzione degli esercizi proposti nell'elaborato di Calcolo Numerico, versione 2024-04-06, insieme alla scrittura delle funzioni Matlab richieste.
 
 ## Descrizione del Progetto
 
