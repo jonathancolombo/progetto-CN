@@ -18,21 +18,22 @@ end
 it = 0;
 count=0;
 x = x0 ;
+m = 5;
 for i =1: maxit
     x0 = x ;
     fx = feval (f , x0 );
     f1x = feval ( f1 , x0 );
     count=count+2;
     if f1x==0
-        break
+        error('Derivata prima uguale a zero! Metodo non convergente');
     end
     x = x0 - (fx / f1x) ;
-    %x = x0 - m *(fx / f1x) ; riga da scommentare per il metodo di newton modificato, 
+    x = x0 - m *(fx / f1x) ; riga da scommentare per il metodo di newton modificato, 
                             % dell'esercizio 7 con m = 5
+    it = it + 1;
     if abs (x - x0 ) <= tolx *(1+ abs ( x ))
         break
     end
-    it = it + 1;
 end
 if ( abs (x - x0 ) > tolx *(1+ abs ( x )))
     disp (' Il metodo non converge ')
